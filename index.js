@@ -32,7 +32,6 @@ app.get('/', (req, res) => {
     res.send('This is my API running...');
 });
 
-// API endpoint to execute a script
 app.post('/script-executed', async (req, res) => {
     const { userName, userId } = req.body;
 
