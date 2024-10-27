@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors'); // Import CORS
 const app = express();
 const PORT = 4000;
 
@@ -13,6 +14,9 @@ mongoose.connect('mongodb+srv://poomverta47:SkibidiNIgga@starhubx.gp8er.mongodb.
 
 // Middleware to parse JSON requests
 app.use(express.json());
+
+// Use CORS middleware
+app.use(cors()); // Enable CORS for all routes
 
 // Define a Mongoose schema and model
 const executionSchema = new mongoose.Schema({
@@ -61,4 +65,5 @@ app.listen(PORT, () => {
     console.log(`API Listening on PORT ${PORT}`);
 });
 
-module.extports = app
+// Fix typo in module.exports
+module.exports = app; // Corrected the typo
